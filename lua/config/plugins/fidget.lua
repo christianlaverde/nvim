@@ -4,3 +4,4 @@ return {
     require("fidget").setup {}
   end
 }
+
