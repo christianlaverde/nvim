@@ -6,6 +6,10 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make"
     },
+    {
+      "nvim-tree/nvim-web-devicons",
+      opts = {}
+    },
   },
   config = function()
     local builtin = require("telescope.builtin")
@@ -19,7 +23,7 @@ return {
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
     vim.keymap.set("n", "<leader>en", function()
-      require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
+      builtin.find_files { cwd = vim.fn.stdpath "config" }
     end)
 
     require("telescope").load_extension("fzf")
