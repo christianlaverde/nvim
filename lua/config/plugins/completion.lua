@@ -21,7 +21,7 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'default',
-      ['<Tab>'] = { 'select_and_accept' },
+      ['<C-j>'] = { 'select_and_accept' },
     },
 
     appearance = {
