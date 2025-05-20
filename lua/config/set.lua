@@ -32,3 +32,8 @@ vim.opt.updatetime = 50
 
 vim.diagnostic.config({ virtual_text = true })
 
+-- Provider disables
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
