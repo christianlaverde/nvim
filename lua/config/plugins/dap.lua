@@ -8,6 +8,7 @@ return {
     "theHamsta/nvim-dap-virtual-text",
     "nvim-neotest/nvim-nio",
     "mfussenegger/nvim-dap-python",
+    { "mason-org/mason.nvim", opts = {} },
   },
   config = function()
     local dap = require "dap"
