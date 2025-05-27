@@ -15,11 +15,11 @@ vim.opt.wrap = true
 vim.opt.showmode = false
 
 vim.opt.swapfile = false
--- vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
--- vim.opt.undofile = true
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
+vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+-- vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

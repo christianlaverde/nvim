@@ -12,6 +12,13 @@ return {
     },
   },
   config = function()
+    require("telescope").setup {
+      defaults = require("telescope.themes").get_ivy(),
+      extensions = {
+        fzf = {}
+      }
+    }
+
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
     vim.keymap.set("n", "<leader>pf", builtin.git_files, { desc = "Telescope git files" })
