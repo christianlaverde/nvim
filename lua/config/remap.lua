@@ -10,6 +10,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>");
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>P", [["+P]])
 
 -- vim.keymap.set("n", "J", "mzJ`c")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

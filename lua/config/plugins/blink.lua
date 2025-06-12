@@ -15,7 +15,23 @@ return {
       nerd_font_variant = 'mono'
     },
     completion = {
-      documentation = { auto_show = false }
+      accept = {
+        auto_brackets = { enabled = false },
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 500,
+        window = {
+          border = "single",
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+        },
+      },
+      menu = {
+        border = "single",
+        draw = { gap = 1 },
+        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+      },
+      ghost_text = { enabled = true },
     },
     sources = {
       default = { "lsp", "path", "snippets", },
@@ -24,9 +40,9 @@ return {
     signature = {
       enabled = true,
       window = {
-        winblend = 75,
-        border = "rounded",
-      }
+        border = "single",
+        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+      },
     },
   },
   opts_extend = { "sources.default" },

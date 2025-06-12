@@ -8,7 +8,7 @@ return {
         ensure_installed = {
           "vim", "vimdoc", "python", "c", "rust", "go", "bash",
           "javascript", "typescript", "html", "css", "json", "json5",
-          "jsdoc", "markdown", "markdown_inline", "dockerfile"
+          "jsdoc", "markdown", "markdown_inline", "dockerfile", "norg"
         },
         ignore_install = {},
         modules = {},

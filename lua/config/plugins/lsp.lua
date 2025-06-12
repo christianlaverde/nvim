@@ -13,7 +13,18 @@ return {
       },
     },
     { "saghen/blink.cmp", },
-    { "mason-org/mason.nvim", opts = {} },
+    {
+      "mason-org/mason.nvim",
+      opts = {},
+      config = function()
+        require("mason").setup {
+          registries = {
+            "github:mason-org/mason-registry",
+            "github:Crashdummyy/mason-registry",
+          },
+        }
+      end
+    },
   },
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -22,6 +33,16 @@ return {
     lspconfig.ts_ls.setup { capabilities = capabilities }
     lspconfig.clangd.setup { capabilities = capabilities }
     lspconfig.pylsp.setup { capabilities = capabilities }
+    -- lspconfig.csharp_ls.setup { capabilities = capabilities }
+    -- lspconfig.roslyn.setup { capabilities = capabilities }
+
+    vim.lsp.config("roslyn", {
+      settings = {
+        ["csharp|formatting"] = {
+          csharp_new_line_before_open_brace = "all"
+        },
+      }
+    })
 
 
     vim.api.nvim_create_autocmd("LspAttach", {
