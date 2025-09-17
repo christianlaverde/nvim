@@ -28,22 +28,29 @@ return {
   },
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
-    local lspconfig = require("lspconfig")
-    lspconfig.lua_ls.setup { capabilities = capabilities }
-    lspconfig.ts_ls.setup { capabilities = capabilities }
-    lspconfig.clangd.setup { capabilities = capabilities }
-    lspconfig.pylsp.setup { capabilities = capabilities }
-    -- lspconfig.csharp_ls.setup { capabilities = capabilities }
-    -- lspconfig.roslyn.setup { capabilities = capabilities }
 
-    vim.lsp.config("roslyn", {
+    vim.lsp.config("lua_ls", { capabilities = capabilities })
+    vim.lsp.config("ts_ls", { capabilities = capabilities })
+    vim.lsp.config("clangd", { capabilities = capabilities })
+    vim.lsp.config("basedpyright", {
+      capabilities = capabilities,
       settings = {
-        ["csharp|formatting"] = {
-          csharp_new_line_before_open_brace = "all"
-        },
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = "basic",
+          }
+        }
       }
     })
+    vim.lsp.config("html", { capabilities = capabilities })
+    vim.lsp.config("roslyn", { capabilities = capabilities })
 
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("ts_ls")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("basedpyright")
+    vim.lsp.enable("html")
+    vim.lsp.enable("roslyn")
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),
